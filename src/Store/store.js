@@ -1,10 +1,12 @@
-// import {configureStore} from '@reduxjs/toolkit'
-// //import reducers
+import {configureStore} from '@reduxjs/toolkit'
 
-// const store = configureStore({
-//     reducer: {
-//         reducer1: reducer1
-//     }
-// })
+//import reducers
+import { setDataReducer } from '../Slices/dataSlice'
 
-// export default store
+export const store = configureStore({
+    reducer: {
+        data: setDataReducer
+    }
+})
+
+export default store
