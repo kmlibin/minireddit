@@ -1,12 +1,11 @@
 import {configureStore} from '@reduxjs/toolkit'
 
 //import reducers
-import { setDataReducer } from '../Slices/dataSlice'
+import setDataReducer from '../Slices/dataSlice'
 
-export const store = configureStore({
+const store = configureStore({
     reducer: {
-        data: setDataReducer
-    }
-})
-
-export default store
+      data: setDataReducer,
+    },
+  })
+  export default store

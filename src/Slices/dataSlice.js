@@ -1,21 +1,34 @@
-import { createSlice, current } from "@reduxjs/toolkit";
-
+import { createSlice } from "@reduxjs/toolkit";
 
 export const dataSlice = createSlice({
-    name: "feed",
-    initialState:[],
+    name: 'posts',
+    initialState: {posts:[]},
     reducers: {
         setData: (state, action) => {
-        // console.log(action.payload)
-        state.push([{...action.payload}])
-        // console.log(current(state))
-        // console.log(current(state[0][0]))  
+           
+        //console.log(action.payload)
+
+        state.posts.push( {
+            id: action.payload.id,
+            title: action.payload.title,
+            thumbnail: action.payload.thumbnail,
+            author: action.payload.author,
+            comments: action.payload.comments
+        })
+        console.log(state.posts)
+    }
+
+        //console.log(state)
+       
         }
         
     }
-})
+)
+
+export default dataSlice.reducer;
 
 export const { setData } = dataSlice.actions;
-export const setDataReducer = dataSlice.reducer;
+
+export const selectPosts = state => state.data.posts;
 
 
