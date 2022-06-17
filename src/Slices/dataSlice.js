@@ -11,11 +11,15 @@ export const dataSlice = createSlice({
         state.posts.push( {
             id: action.payload.id,
             title: action.payload.title,
-            thumbnail: action.payload.thumbnail,
             author: action.payload.author,
-            comments: action.payload.comments
+            comments: action.payload.comments,
+            subreddit: action.payload.subreddit,
+            url: action.payload.url,
+            text: action.payload.text,
+            image: action.payload.img
+
         })
-        console.log(state.posts)
+        //console.log(state.posts)
     }
 
         //console.log(state)

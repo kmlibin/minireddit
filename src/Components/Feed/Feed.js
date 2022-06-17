@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux'
+
+//selectors
 import { selectPosts } from '../../Slices/dataSlice';
 
 //actions
@@ -16,7 +18,6 @@ export default function Feed() {
     const posts = useSelector(selectPosts)
 
     //fetch data -- should I put in a hook? tbd
-
     useEffect(() => {
         const getData = async () => {
             setIsFetching(true)
@@ -26,17 +27,25 @@ export default function Feed() {
 
                 if (response.status === 200 || fetching === true) {
                     const jsonResponse = await response.json();
-                    const newData = jsonResponse.data.children
 
+                    console.log(jsonResponse)
+                    const newData = jsonResponse.data.children
+                    const imageData = newData.map(item => item.data.preview)
+                    console.log(imageData)
+                  
                     //create new object to be stored in Redux and dispatch to store
 
                     newData.map((item) => {
                         dispatch(setData({
                             id: item.data.id,
                             title: item.data.title,
-                            thumbnail: item.data.thumbnail,
                             author: item.data.author,
-                            comments: item.data.num_comments
+                            comments: item.data.num_comments,
+                            subreddit: item.data.subreddit_name_prefixed,
+                            url: item.data.url,
+                            text: item.data.selftext,
+                            img: item.data.preview.images[0].source.url
+                            
                         }))
 
                     })
