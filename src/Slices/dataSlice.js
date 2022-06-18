@@ -6,7 +6,7 @@ export const dataSlice = createSlice({
     reducers: {
         setData: (state, action) => {
            
-        //console.log(action.payload)
+        // console.log(action.payload)
 
         state.posts.push( {
             id: action.payload.id,
@@ -16,13 +16,15 @@ export const dataSlice = createSlice({
             subreddit: action.payload.subreddit,
             url: action.payload.url,
             text: action.payload.text,
-            image: action.payload.img
+            image: action.payload.img,
+            media: action.payload.media
+           
 
         })
-        //console.log(state.posts)
+    
     }
 
-        //console.log(state)
+        
        
         }
         
