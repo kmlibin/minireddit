@@ -1,39 +1,40 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialState = {posts:[]}
 export const dataSlice = createSlice({
     name: 'posts',
-    initialState: {posts:[]},
+    initialState,
     reducers: {
         setData: (state, action) => {
-           
+
         // console.log(action.payload)
 
-        state.posts.push( {
-            id: action.payload.id,
-            title: action.payload.title,
-            author: action.payload.author,
-            comments: action.payload.comments,
-            subreddit: action.payload.subreddit,
-            url: action.payload.url,
-            text: action.payload.text,
-            image: action.payload.img,
-            media: action.payload.media
-           
+            state.posts.push({
+                id: action.payload.id,
+                title: action.payload.title,
+                author: action.payload.author,
+                comments: action.payload.comments,
+                subreddit: action.payload.subreddit,
+                url: action.payload.url,
+                text: action.payload.text,
+                image: action.payload.img,
+                media: action.payload.media,
+                timeStamp: action.payload.timeStamp,
+                ups: action.payload.ups
 
-        })
-    
-    }
+            })
 
-        
-       
-        }
-        
+        },
+            resetState(state) {
+                Object.assign(state, initialState)
+            }
     }
+}
 )
 
 export default dataSlice.reducer;
 
-export const { setData } = dataSlice.actions;
+export const { setData, resetState } = dataSlice.actions;
 
 export const selectPosts = state => state.data.posts;
 
