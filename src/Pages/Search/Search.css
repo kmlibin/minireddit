@@ -1,0 +1,20 @@
+.no-results {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.no-results a {
+    background-color: var(--light-purple);
+    padding: .5em;
+    margin-top: 1em;
+    border: 1px solid var(--dark-color);
+}
+
+.no-results a:hover {
+    color: var(--light-purple);
+    background-color: var(--dark-color);
+}
+

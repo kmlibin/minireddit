@@ -1,11 +1,17 @@
 import { useLocation, Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
+
+//selectors
 import { selectPosts } from '../../Slices/dataSlice'
 
+//components 
 import FeedCard from '../../Components/Feed/FeedCard'
 
-export default function Search() {
+//styles
+import './Search.css'
+
+export default function Search({fetchComments}) {
     //access to dataslices
     const posts = useSelector(selectPosts)
 
@@ -32,29 +38,33 @@ export default function Search() {
     console.log(results)
 
     return (
-        <div>
+        <div className = "feed-container">
             {results.length < 1 && (
-                <div>
-                    <h2 className="page-title">Sorry, no results found matching "{query}"
+                <div className = "no-results">
+                    <h2 className="page-title" >Sorry, no results found matching "{query}"
                     </h2>
                     <Link to="/">Return to Home</Link>
                 </div>
             )}
 
-            {results.length > 1 && <h2 className="page-title">Results including "{query}"</h2>}
-            {results.map(post => (
+            {results.length >= 1 && (
+            <div>
+                <h2 className="page-title">Results including "{query}" :</h2>
+                {results.map(post => (
                 <FeedCard
+                fetchComments = {fetchComments}
                     key={post.id}
+                    upVotes={post.upVotes}
                     image={post.image}
                     title={post.title}
-                    url={post.url}
                     media={post.media}
                     text={post.text}
                     author={post.author}
+                    timeStamp={post.timeStamp}
                     comments={post.comments}
-                    timeStamp = {post.timeStamp}
                 />
             ))}
+            </div>)}
         </div>
     )
 }
