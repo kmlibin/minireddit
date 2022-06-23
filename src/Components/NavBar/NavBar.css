@@ -8,6 +8,7 @@
     grid-template-areas: "logo search space";
     grid-gap: .5em;
     width: 100%;
+    box-shadow: 10px 0 10px grey;
 }
 
 .navbar nav {
@@ -40,12 +41,12 @@
     width: 100%;
 }
 
+/* reddit icon - the search icon is in the searchbar css */
+
 .navbar svg {
     padding-left: .5em;
     padding-right: .2em;
     filter: invert(10%);
-}
-
-.navbar .search svg {
-    padding: 0;
+    color: var(--reddit-color);
+    font-size: 2em;
 }
