@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 
 import { selectPosts } from '../../Slices/dataSlice'
 
-import FeedCard from '../Feed/FeedCard'
+import FeedCard from '../../Components/Feed/FeedCard'
 
 export default function Search() {
     //access to dataslices
@@ -52,6 +52,7 @@ export default function Search() {
                     text={post.text}
                     author={post.author}
                     comments={post.comments}
+                    timeStamp = {post.timeStamp}
                 />
             ))}
         </div>

@@ -1,0 +1,90 @@
+.feed-card {
+    background-color: var(--light-color);
+    display: flex;
+    color: var(--text-color);
+    padding-left: 1em;
+    padding-right: 1em;
+
+}
+
+.feed-card .ups {
+    height: 100%;
+    width: 5%;
+    padding-right: 1em;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.feed-card .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%
+}
+
+.info h2 {
+    margin-right: auto;
+    font-size: 1em;
+    padding-top: .9em;
+    padding-bottom: .9em;
+}
+
+.feed-card:not(:first-child) {
+    margin-top: 1em;
+}
+
+.feed-card img {
+    width: 100%;
+    height: auto;
+}
+
+
+.bottom-card {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: .9em;
+    margin-bottom: .9em;
+    border-top: solid 1px var(--med-color);
+    padding-top: .9em;
+    font-size: .75em;
+}
+
+.info li {
+    display: inline-block;
+    padding-left: 1em;
+    padding-right: 1em;
+    align-self: auto;
+
+}
+
+.info li:first-child {
+    font-weight: bold;
+    color: var(--reddit-color)
+}
+.feed-card svg:hover {
+    cursor: pointer;
+}
+
+.up-arrow, .down-arrow {
+    color: var(--med-color-2)
+}
+.up-arrow:hover {
+    color: mediumseagreen;
+}
+
+.down-arrow:hover {
+    color: #F47174;
+}
+
+.message-icon {
+    color: var(--med-color-2);
+    font-size: 1.1em
+}
+.message-icon:hover {
+    color: var(--reddit-color);
+}
+

@@ -1,14 +1,29 @@
 import './App.css';
-import SearchBar from './Components/SearchBar/SearchBar';
-import Home from './Pages/Home';
-import {BrowserRouter} from 'react-router-dom'
+import NavBar from './Components/NavBar/NavBar'
+import Home from './Pages/Home/Home';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import SubReddit from './Pages/SubReddit/SubReddit';
+import SideBar from './Components/SideBar/SideBar';
+import Search from './Pages/Search/Search'
+import Spinner from './Components/Spinner/Spinner';
+
+import { useSetData } from './Hooks/useSetData'
 
 function App() {
+  const {loading} = useSetData()
   return (
     <div className="App">
       <BrowserRouter>
-        <SearchBar />
-        <Home />
+    {/* <Comments /> */}
+        <NavBar />
+        <div className="reddit-container">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/subreddit/:name" element={<SubReddit />} />
+            <Route path = "/search" element = {<Search />} />
+          </Routes>
+          <SideBar />
+        </div>
       </BrowserRouter>
     </div>
   );

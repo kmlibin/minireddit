@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 //components
 import SingleSR from './SingleSR'
+import Spinner from '../Spinner/Spinner'
 
 //actions
 import { setSubReddit } from '../../Slices/subRedditSlice'
@@ -55,15 +56,12 @@ export default function SideBar() {
 
   return (
     <div className="sidebar-container">
+      {/* {isLoading && <Spinner />} */}
       {subReddit.map(sub => (
-        <SingleSR icon={sub.icon} key={sub.id} url={sub.url} name={sub.displayName} />
+        //split logic from component
+        <SingleSR icon={sub.icon} key={sub.id} name={sub.displayName} />
       ))}
 
-
-      {/* {subReddit.map(sub => (
-          <p key={sub.id} className="btn">{sub.displayName}</p>
-        ))} */}
-
-      subreddits</div>
+    </div>
   )
 }

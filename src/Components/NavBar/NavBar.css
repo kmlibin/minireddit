@@ -1,0 +1,51 @@
+.navbar {
+    background-color: var(--light-color);
+    padding-top: .75em;
+    padding-bottom: .75em;
+    display: grid;
+    grid-column: 1/-1;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "logo search space";
+    grid-gap: .5em;
+    width: 100%;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    grid-area: logo;
+}
+.navbar a {
+    text-decoration: none;
+}
+.navbar h1 {
+    font-size: 1.8em;
+    color:var(--reddit-color);
+    font-weight: 900;
+}
+
+.navbar .mini {
+    padding-left: 4px;
+    font-weight: 300;
+    font-style: italic;
+    font-size: .75em;
+    color: var(--text-color)
+}
+
+.navbar .search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: search;
+    width: 100%;
+}
+
+.navbar svg {
+    padding-left: .5em;
+    padding-right: .2em;
+    filter: invert(10%);
+}
+
+.navbar .search svg {
+    padding: 0;
+}
