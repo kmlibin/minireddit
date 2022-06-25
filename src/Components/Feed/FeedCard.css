@@ -1,10 +1,23 @@
 .feed-card {
     background-color: var(--light-color);
     display: flex;
+    flex-direction: column;
     color: var(--text-color);
     padding-left: 1em;
     padding-right: 1em;
+    box-shadow: 0 10px 10px -10px grey;
+    animation: larger 700ms
+}
 
+/* load animation for cards to grow in size */
+@keyframes larger {
+    from {
+        transform: scale(.15);
+    }
+
+    to {
+        transform: scale(1);
+    }
 }
 
 .feed-card .ups {
@@ -25,22 +38,18 @@
     width: 100%
 }
 
-.info h2 {
-    margin-right: auto;
-    font-size: 1em;
-    padding-top: .9em;
-    padding-bottom: .9em;
-}
-
 .feed-card:not(:first-child) {
     margin-top: 1em;
+}
+
+.feed-card:last-child {
+    margin-bottom: 1em;
 }
 
 .feed-card img {
     width: 100%;
     height: auto;
 }
-
 
 .bottom-card {
     display: flex;
@@ -53,7 +62,14 @@
     font-size: .75em;
 }
 
-.info li {
+.info h2 {
+    margin-right: auto;
+    font-size: 1em;
+    padding-top: .9em;
+    padding-bottom: .9em;
+}
+
+.feed-card li {
     display: inline-block;
     padding-left: 1em;
     padding-right: 1em;
@@ -65,13 +81,53 @@
     font-weight: bold;
     color: var(--reddit-color)
 }
+
+/* comments section */
+
+.comments {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: .9em;
+    margin-bottom: .9em;
+    font-size: .9em;
+    background-color: var(--light-purple);
+    color: var(--text-color);
+}
+
+.comments:hover {
+    box-shadow: 5px 5px 5px 5px grey;
+}
+
+.comments-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: .9em;
+    margin-bottom: .9em;
+}
+.comments p {
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+}
+.comments li:first-child {
+    font-weight: bold;
+    color: var(--reddit-color)
+}
+
+
+/* react icon stylings  */
+
 .feed-card svg:hover {
     cursor: pointer;
 }
 
-.up-arrow, .down-arrow {
+.up-arrow,
+.down-arrow {
     color: var(--med-color-2)
 }
+
 .up-arrow:hover {
     color: mediumseagreen;
 }
@@ -84,7 +140,7 @@
     color: var(--med-color-2);
     font-size: 1.1em
 }
+
 .message-icon:hover {
     color: var(--reddit-color);
 }
-
