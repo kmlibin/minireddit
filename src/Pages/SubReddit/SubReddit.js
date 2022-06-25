@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useSetData } from '../../Hooks/useSetData'
 
@@ -11,7 +11,6 @@ import Spinner from '../../Components/Spinner/Spinner'
 
 
 export default function SubReddit() {
-    const dispatch = useDispatch()
     const navigate = useNavigate()
     const { name } = useParams()
     const posts = useSelector(selectPosts)
@@ -20,12 +19,12 @@ export default function SubReddit() {
     let url = 'https://www.reddit.com/r/' + name + '.json'
     const { loading, error } = useSetData(url)
     return (
-        <div className= "feed-container">
+        <div className="feed-container">
             {loading && <Spinner />}
-            {error && 
+            {error &&
                 <div className="error">
-                <p> Oops! Something went wrong.</p>
-                <button className ="btn" onclick = {() => navigate('/')}>Return Home</button>
+                    <p> Oops! Something went wrong.</p>
+                    <button className="btn" onclick={() => navigate('/')}>Return Home</button>
                 </div>}
             {posts.map(post => (
                 <FeedCard
@@ -38,11 +37,10 @@ export default function SubReddit() {
                     author={post.author}
                     timeStamp={post.timeStamp}
                     comments={post.comments}
-                    
+                    permalink={post.permalink}
                 />
-                
             ))
-            
+
             }
         </div>
     )
