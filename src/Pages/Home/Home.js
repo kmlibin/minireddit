@@ -1,7 +1,6 @@
 import { useSetData } from '../../Hooks/useSetData'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { useEffect } from 'react'
 
 //actions 
 import { selectPosts } from '../../Slices/dataSlice'
@@ -42,6 +41,7 @@ export default function Home() {
                     text={post.text}
                     author={post.author}
                     comments={post.comments}
+                    permalink={post.permalink}
                 />
             ))}
         </div>
