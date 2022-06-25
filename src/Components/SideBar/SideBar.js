@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 
 //components
 import SingleSR from './SingleSR'
-import Spinner from '../Spinner/Spinner'
 
 //actions
 import { setSubReddit } from '../../Slices/subRedditSlice'
@@ -22,7 +21,7 @@ export default function SideBar() {
   const url = 'https://www.reddit.com/subreddits.json'
 
   useEffect(() => {
-
+    //fetch data
     const getSubReddit = async () => {
       setIsLoading(true)
       try {
@@ -32,7 +31,6 @@ export default function SideBar() {
           const srData = jsonResponse.data.children
           //console.log(jsonResponse)
           //create new object for store and dispatch
-
           srData.map((item) => {
             dispatch(setSubReddit({
               icon: item.data.icon_img,
@@ -56,7 +54,7 @@ export default function SideBar() {
 
   return (
     <div className="sidebar-container">
-      {/* {isLoading && <Spinner />} */}
+      <h3>SubReddits</h3>
       {subReddit.map(sub => (
         //split logic from component
         <SingleSR icon={sub.icon} key={sub.id} name={sub.displayName} />

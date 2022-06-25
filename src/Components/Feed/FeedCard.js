@@ -15,7 +15,8 @@ import './FeedCard.css'
 
 export default function FeedCard({ permalink, timeStamp, media, image, title, author, comments, text, upVotes }) {
     const [toggle, setToggle] = useState(false);
-
+    
+//toggle for comments
     const handleClick = () => {
         setToggle( !toggle )
     }

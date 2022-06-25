@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+let initialState = {comments:[],
+    isCommentsShowing: false
+}
 export const commentsSlice = createSlice({
     name: 'comments',
-    initialState: {
-        comments: [],
-        isCommentsShowing: false
-    },
+    initialState,
     reducers: {
         setComments: (state, action) => {
 
@@ -22,6 +22,9 @@ export const commentsSlice = createSlice({
         toggleComments: (state) => {
             state.isCommentsShowing = !state.isCommentsShowing;
         },
+        resetCommentState(state) {
+            Object.assign(state, initialState)
+        },
 
     }
 
@@ -30,7 +33,7 @@ export const commentsSlice = createSlice({
 
 export default commentsSlice.reducer;
 
-export const { setComments, toggleComments } = commentsSlice.actions;
+export const { setComments, toggleComments, resetCommentState } = commentsSlice.actions;
 
 export const selectComment = state => state.comments.comments;
 export const selectIsCommentsShowing = state => state.comments.isCommentsShowing;
