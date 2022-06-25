@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {posts:[],}
+let initialState = {posts:[],
+link: ''}
 export const dataSlice = createSlice({
     name: 'posts',
     initialState,
@@ -25,6 +26,10 @@ export const dataSlice = createSlice({
             resetState(state) {
                 Object.assign(state, initialState)
             },
+            setCommentLink: (state, action) => {
+                console.log(action.payload)
+                state.link = action.payload
+            }
 
     }
 }
@@ -32,9 +37,10 @@ export const dataSlice = createSlice({
 
 export default dataSlice.reducer;
 
-export const { setData, resetState } = dataSlice.actions;
+export const { setData, resetState, setCommentLink } = dataSlice.actions;
 
 export const selectPosts = state => state.data.posts;
 export const selectPostName = state => state.data.posts.map(post => post.subreddit)
+export const selectCommentLink = state => state.data.link
 
 
