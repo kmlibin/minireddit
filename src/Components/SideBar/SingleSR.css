@@ -47,12 +47,12 @@
     transition: transform .3s ease-in-out;
   }
   
-  a:hover::before {
+  .card a:hover::before {
     transform-origin: left;
     transform: scaleX(1);
   }
 
-  a:hover {
+  .card a:hover {
     background-color: #e4e5f1;
     border-radius: 1%;
   }
