@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# Reddit Minimal
+## React/Redux Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This React App is modeled on Reddit. On load, the app displays data from Reddit's popular thread, though you can choose to display different subreddits from the sidebar on the right side of the screen. Currently, only 25 posts are fetched from Reddit, and I would like to add functionality that allows for multiple fetches. Each post also displays comments, again, I limited the comments and would like to display more in future renders. There is a search bar at the top where you can search through the currently selected Reddit. 
 
-## Available Scripts
+### Languages / Tools
 
-In the project directory, you can run:
+React, Redux Toolkit, JavaScript, CSS, HTML
 
-### `npm start`
+React Icons, Google Fonts, fdn library
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Worked with the Reddit JSON API
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Project Highlights
 
-### `npm test`
+This project was designed so that students could continue practicing React, React Router, fetching to APIS, and Redux. Some highlights include:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    1. Usual react stuff like useState, useEffect, useNavigate, useParams, react router-dom, dynamic routes, forms
+    2. A custom hook to fetch post data from Reddit JSON API
+    3. Searchable data
+    4. Redux Toolkit to manage state - used for setting post and subreddit data
+    5. CSS transitions and animations
+    
 
-### `npm run build`
+### What I learned / Challenges
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This project helped build my confidence quite a bit, and there were parts that were both rewarding and challenging. I enjoyed the moments where I was figuring out how to work with the API...getting, storing, and using the data (and having it work!) was exciting. Although it's obviously annoying to get stuck on a problem for awhile, I found it satisyfing when I found answers, and I got more comfortable using Stack Overflow. I also enjoyed coming back to CSS and styling the page. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The first challenge was just trying to figure out the object that Reddit sent - trying to figure out how many layers to go through to find the data I wanted, then trying to decide which keys I needed to access were the two big things I had to understand to move forward. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The next significant issue I faced was how I wanted to render the comments - I had initially wanted to only load and display comments for one post at a time because it seems more feasible when you're working with (potentially) hundreds or thousands of comments (as opposed to fetching all of the comments on page load and simply hiding them with a toggle). Beacuse this required a lot of asynchronous action, I believe this is where I ran into problems with Redux. I eventually just resorted to storing 25 comments in local state, fetching them on load, and hiding them with a toggle, but I have since discovered that I think I need to look more at Thunks.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+There are a few things I would continue to work on - first, just adding more functionality like loading more posts or comments. It would also be nice to have a working count for up/down votes, and in the search bar I would like it to show "search in {current subreddit}". 
