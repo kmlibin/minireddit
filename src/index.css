@@ -69,7 +69,7 @@ input {
     width: 95%;
   }
 }
-
+/* fix this */
 .sidebar-container h3 {
   color: var(--text-color);
   margin-right: auto;
