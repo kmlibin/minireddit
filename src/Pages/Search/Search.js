@@ -11,7 +11,7 @@ import FeedCard from '../../Components/Feed/FeedCard'
 //styles
 import './Search.css'
 
-export default function Search({fetchComments}) {
+export default function Search({ fetchComments }) {
     //access to dataslices
     const posts = useSelector(selectPosts)
 
@@ -25,7 +25,8 @@ export default function Search({fetchComments}) {
 
     //filter through data, push to a new array. use that array to pass values to FeedCard
     // what about numbers? i.e., I typed in a single digit, and it will find anything with 
-    // the number in ANY of the data(like image links)
+    // the number in ANY of the data(like image links). toString?
+
     let results = []
     const filteredData = posts.forEach((post) => {
         if (Object.values(post).join('').toLowerCase().includes(query.toLowerCase())) {
@@ -38,9 +39,9 @@ export default function Search({fetchComments}) {
     console.log(results)
 
     return (
-        <div className = "feed-container">
+        <div className="feed-container">
             {results.length < 1 && (
-                <div className = "no-results">
+                <div className="no-results">
                     <h2 className="page-title" >Sorry, no results found matching "{query}"
                     </h2>
                     <Link to="/">Return to Home</Link>
@@ -48,23 +49,23 @@ export default function Search({fetchComments}) {
             )}
 
             {results.length >= 1 && (
-            <div>
-                <h2 className="page-title">Results including "{query}" :</h2>
-                {results.map(post => (
-                <FeedCard
-                fetchComments = {fetchComments}
-                    key={post.id}
-                    upVotes={post.upVotes}
-                    image={post.image}
-                    title={post.title}
-                    media={post.media}
-                    text={post.text}
-                    author={post.author}
-                    timeStamp={post.timeStamp}
-                    comments={post.comments}
-                />
-            ))}
-            </div>)}
+                <div>
+                    <h2 className="page-title">Results including "{query}" :</h2>
+                    {results.map(post => (
+                        <FeedCard
+                            fetchComments={fetchComments}
+                            key={post.id}
+                            upVotes={post.upVotes}
+                            image={post.image}
+                            title={post.title}
+                            media={post.media}
+                            text={post.text}
+                            author={post.author}
+                            timeStamp={post.timeStamp}
+                            comments={post.comments}
+                        />
+                    ))}
+                </div>)}
         </div>
     )
 }

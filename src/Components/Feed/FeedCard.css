@@ -1,12 +1,13 @@
 .feed-card {
     background-color: var(--light-color);
     display: flex;
-    /* flex-direction: column; */
     color: var(--text-color);
     padding-left: 1em;
     padding-right: 1em;
     box-shadow: 0 10px 10px -10px grey;
-    animation: larger 700ms
+    animation: larger 700ms;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 /* load animation for cards to grow in size */
@@ -20,6 +21,7 @@
     }
 }
 
+
 .feed-card .ups {
     height: 100%;
     width: 5%;
@@ -31,12 +33,27 @@
 
 }
 
+@media screen and (max-width: 700px){
+     .ups p{
+     font-size: .75em;
+     
+    }
+  }
+@media screen and (max-width: 450px){
+    .feed-card .ups{
+     margin-right: 4px;
+     
+    }
+  }
+
 .feed-card .info {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%
+    width: 100%;
+    overflow-x: hidden;
 }
+
 
 .feed-card:not(:first-child) {
     margin-top: 1em;
@@ -61,6 +78,17 @@
     padding-top: .9em;
     font-size: .75em;
 }
+@media screen and (max-width: 450px){
+    .bottom-card{
+     flex-direction: column;
+    }
+  }
+
+  @media screen and (max-width: 450px){
+    .bottom-card li{
+     margin-top: 4px;
+    }
+  }
 
 .info h2 {
     margin-right: auto;
@@ -68,6 +96,7 @@
     padding-top: .9em;
     padding-bottom: .9em;
 }
+
 
 .feed-card li {
     display: inline-block;
@@ -84,20 +113,43 @@
 
 /* comments section */
 
+
+.comments-container {
+    width: 95%;
+    overflow-x: hidden;
+}
 .comments {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    margin-top: .9em;
-    margin-bottom: .9em;
+    width: 95%;
+    margin: .9em;
     font-size: .9em;
     background-color: var(--light-purple);
     color: var(--text-color);
+   
+}
+
+@media screen and (max-width: 450px){
+    .comments{
+     font-size: .75em;
+     width: 100%;
+    }
+  }
+
+
+.comment-list {
+   max-width: 100%;
 }
 
 .comments:hover {
     box-shadow: 5px 5px 5px 5px grey;
 }
+
+@media screen and (max-width: 600px){
+    .comments:hover{
+     box-shadow: none;
+    }
+  }
 
 .comments-info {
     display: flex;
@@ -106,6 +158,12 @@
     margin-top: .9em;
     margin-bottom: .9em;
 }
+
+@media screen and (max-width: 450px){
+    .comments-info{
+     flex-direction: column;
+    }
+  }
 .comments p {
     padding-left: 1em;
     padding-right: 1em;

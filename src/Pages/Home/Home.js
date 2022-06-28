@@ -25,10 +25,10 @@ export default function Home() {
     return (
         <div className="feed-container">
             {loading && <Spinner />}
-            {error && 
-                <div className ="error">
-                <p> Oops! Something went wrong.</p>
-                <button className ="btn" onclick = {() => navigate('/')}>Return Home</button>
+            {error &&
+                <div className="error">
+                    <p> Oops! Something went wrong.</p>
+                    <button className="btn" onclick={() => navigate('/')}>Return Home</button>
                 </div>}
             {posts.map(post => (
                 <FeedCard

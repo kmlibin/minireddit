@@ -10,9 +10,15 @@
 }
 
 .navbar .searchbar svg {
-    color:var(--text-color);
+    color: var(--text-color);
     padding: 0;
-    opacity:.75;
-    font-size:1.2em;
+    opacity: .75;
+    font-size: 1.2em;
     cursor: pointer;
+}
+
+@media screen and (max-width: 450px) {
+    .searchbar {
+        justify-content: center;
+    }
 }

@@ -20,6 +20,7 @@ This project was designed so that students could continue practicing React, Reac
     3. Searchable data
     4. Redux Toolkit to manage state - used for setting post and subreddit data
     5. CSS transitions and animations
+    6. Responsive design
     
 
 ### What I learned / Challenges

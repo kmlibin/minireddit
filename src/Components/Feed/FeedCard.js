@@ -14,12 +14,12 @@ import './FeedCard.css'
 
 
 export default function FeedCard({ permalink, timeStamp, media, image, title, author, comments, text, upVotes }) {
-    const [toggle, setToggle] = useState(false);
-    
-//toggle for comments
-    const handleClick = () => {
-        setToggle( !toggle )
-    }
+  const [toggle, setToggle] = useState(false);
+
+  //toggle for comments
+  const handleClick = () => {
+    setToggle(!toggle)
+  }
 
   return (
 
@@ -40,10 +40,12 @@ export default function FeedCard({ permalink, timeStamp, media, image, title, au
         <div className="bottom-card">
           <li>{author}</li>
           <li className="italics">{formatDistanceToNow(new Date(timeStamp * 1000), 20220621, { addSuffix: true })} ago</li>
-          <li><FaCommentAlt className="message-icon" onClick={handleClick}/> {comments}</li>
+          <li><FaCommentAlt className="message-icon" onClick={handleClick} /> {comments}</li>
         </div>
+
+        {toggle && <CommentFeed permalink={permalink} />}
+        
       </div>
-      {toggle && <CommentFeed permalink={permalink} />}
     </div>
   )
 }

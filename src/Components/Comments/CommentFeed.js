@@ -29,7 +29,7 @@ export default function CommentFeed({ permalink }) {
     }, [permalink]);
 
     return (
-        <div>
+        <div className="comment-list">
             {comments}
         </div>
     );

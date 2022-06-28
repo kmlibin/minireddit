@@ -11,15 +11,30 @@
     box-shadow: 10px 0 10px grey;
 }
 
+@media screen and (max-width: 700px) {
+    .navbar {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 .navbar nav {
     display: flex;
     align-items: center;
     grid-area: logo;
 }
 
+
 .navbar h1 {
     font-size: 1.8em;
-    color:var(--reddit-color);
+    color: var(--reddit-color);
     font-weight: 900;
 }
 

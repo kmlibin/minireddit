@@ -1,10 +1,12 @@
 import { useState, useRef } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
-import { useSelector } from 'react-redux'
-// import { useSetData } from '../../Hooks/useSetData'
-import { FaReddit, FaSearch } from 'react-icons/fa'
-//selectors
-import { selectPostName } from '../../Slices/dataSlice'
+import { useNavigate } from 'react-router-dom'
+// import { useSelector } from 'react-redux'
+
+// //selectors
+// import { selectPostName } from '../../Slices/dataSlice'
+
+//icons
+import { FaSearch } from 'react-icons/fa'
 
 //styles
 import './SearchBar.css'
@@ -13,10 +15,10 @@ import './SearchBar.css'
 
 export default function Searchbar() {
     const placeholder = useRef();
-    const redditName = useSelector(selectPostName)
+    // const redditName = useSelector(selectPostName)
     const [term, setTerm] = useState('')
     const navigate = useNavigate()
-    // const {loading} = useSetData()
+
 
     //function to clear placeholder value on submit, goes in handlesubmit func
     const clearInput = () => (placeholder.current.value = "");
@@ -44,7 +46,6 @@ export default function Searchbar() {
                     id="search"
                     onChange={(e) => setTerm(e.target.value)}
                 />
-
             </form>
             <FaSearch onClick={handleSubmit} />
         </div>
