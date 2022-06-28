@@ -13,7 +13,11 @@
   font-weight: bold;
 }
 
-
+.card svg {
+  height: 30px;
+  width: 30px;
+  color: var(--reddit-color);
+}
 .card img {
   height: 30px;
   width: 30px;
