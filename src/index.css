@@ -70,6 +70,11 @@ input {
   }
 }
 
+.sidebar-container h3 {
+  color: var(--text-color);
+  margin-right: auto;
+  padding: .5em;
+}
 
 .italics {
   font-style: italic;
