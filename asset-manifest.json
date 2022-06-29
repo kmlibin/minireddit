@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/kmlibin/minireddit/static/css/main.176d4958.css",
-    "main.js": "/kmlibin/minireddit/static/js/main.13d1b005.js",
-    "index.html": "/kmlibin/minireddit/index.html",
-    "main.176d4958.css.map": "/kmlibin/minireddit/static/css/main.176d4958.css.map",
-    "main.13d1b005.js.map": "/kmlibin/minireddit/static/js/main.13d1b005.js.map"
+    "main.css": "/minireddit/static/css/main.176d4958.css",
+    "main.js": "/minireddit/static/js/main.13d1b005.js",
+    "index.html": "/minireddit/index.html",
+    "main.176d4958.css.map": "/minireddit/static/css/main.176d4958.css.map",
+    "main.13d1b005.js.map": "/minireddit/static/js/main.13d1b005.js.map"
   },
   "entrypoints": [
     "static/css/main.176d4958.css",
