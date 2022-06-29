@@ -7,7 +7,7 @@
     box-shadow: 0 10px 10px -10px grey;
     animation: larger 700ms;
     max-width: 100%;
-    overflow-x: hidden;
+    overflow-wrap: anywhere;
 }
 
 /* load animation for cards to grow in size */

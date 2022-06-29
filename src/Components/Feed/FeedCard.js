@@ -32,7 +32,7 @@ export default function FeedCard({ permalink, timeStamp, media, image, title, au
 
       <div className="info">
         <h2>{title.replace("&amp;", "")}</h2>
-        {text.includes('www') ? null : <p>{text}</p>}
+        {text.includes("www") ? null : <p>{text}</p>}
         {/* if it's a video, the page displays a sad blank image. I haven't figured out videos, 
                   so this way I check so you at least don't see anything. */}
         {media === null ? <img src={image} /> : null}
