@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/minireddit/static/css/main.176d4958.css",
-    "main.js": "/minireddit/static/js/main.13d1b005.js",
+    "main.js": "/minireddit/static/js/main.c100446e.js",
     "index.html": "/minireddit/index.html",
     "main.176d4958.css.map": "/minireddit/static/css/main.176d4958.css.map",
-    "main.13d1b005.js.map": "/minireddit/static/js/main.13d1b005.js.map"
+    "main.c100446e.js.map": "/minireddit/static/js/main.c100446e.js.map"
   },
   "entrypoints": [
     "static/css/main.176d4958.css",
-    "static/js/main.13d1b005.js"
+    "static/js/main.c100446e.js"
   ]
 }
