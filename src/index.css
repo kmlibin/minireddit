@@ -59,7 +59,7 @@ input {
 
 /* two components access this  */
 .feed-container {
-  max-width: 75%;
+  width: 75%;
 
 }
 
