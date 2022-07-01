@@ -1,6 +1,8 @@
 # Reddit Minimal
 ## React/Redux Project
 
+gh-pages deploy: https://kmlibin.github.io/minireddit/
+
 This React App is modeled on Reddit. On load, the app displays data from Reddit's popular thread, though you can choose to display different subreddits from the sidebar on the right side of the screen. Currently, only 25 posts are fetched from Reddit, and I would like to add functionality that allows for multiple fetches. Each post also displays comments, again, I limited the comments and would like to display more in future renders. There is a search bar at the top where you can search through the currently selected Reddit. 
 
 ### Languages / Tools
