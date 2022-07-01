@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 
 //pages and components
 import NavBar from './Components/NavBar/NavBar'
@@ -14,17 +14,21 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <NavBar />
-        <div className="reddit-container">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/subreddit/:name" element={<SubReddit />} />
-            <Route path="/search" element={<Search />} />
-          </Routes>
-          <SideBar />
-        </div>
-      </BrowserRouter>
+<HashRouter>
+      <NavBar />
+      <div className="reddit-container">
+        
+          
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/subreddit/:name" element={<SubReddit />} />
+              <Route path="/search" element={<Search />} />
+            </Routes>
+          
+      
+        <SideBar />
+      </div>
+      </HashRouter>
     </div>
   );
 }
